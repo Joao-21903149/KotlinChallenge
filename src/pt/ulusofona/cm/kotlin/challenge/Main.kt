@@ -28,6 +28,8 @@ fun main(){
             return "Veiculo(identificadorVeiculo='$identificadorVeiculo')"
         }
 
+        class Veiculo(val identificador:String)
+
         fun requerCarta():Boolean{
             return false
         }
@@ -45,6 +47,9 @@ fun main(){
         override fun toString(): String {
             return "Pessoa(nome='$nome', date=$dataDeNascimento)"
         }
+
+        class Pessoa(val nome: String,val dataDeNascimento : Date)
+
 
 
     }
@@ -66,7 +71,7 @@ fun main(){
         override fun moverPara(x: Int, y: Int) {
         }
 
-
+        class Carro(val identificador: String, val motor: Motor)
     }
 
     class Bicicleta(x: Int, y: Int,name: String) : Posicao(x,y,name), Movimentavel {
@@ -78,7 +83,7 @@ fun main(){
         override fun moverPara(x: Int, y: Int) {
         }
 
-
+        class Bicicleta(val identificador: String)
     }
 
     class Carta(name: String) : Pessoa(name) {
@@ -86,7 +91,7 @@ fun main(){
     }
 
     open class Posicao(x: Int, y: Int, name: String) : Veiculo(name) {
-
+        class Posicao(val x:Int,val y:Int)
     }
 
     class Motor(name: String) : Veiculo(name), Ligavel {
@@ -104,6 +109,8 @@ fun main(){
         override fun estaLigado():Boolean {
             return false
         }
+        class Motor(val cavalos: Int,val cilindarada : Int)
+
     }
 
 
